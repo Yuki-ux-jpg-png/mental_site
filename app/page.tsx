@@ -50,7 +50,15 @@ export default function Page() {
               <a href="#price" className="rounded-full bg-teal px-8 py-4 text-center font-medium text-white shadow-card">コミュニティに参加する</a>
               <a href="#about" className="rounded-full border border-deep/10 bg-white px-8 py-4 text-center font-medium text-deep">詳しく見る</a>
             </div>
-            <p className="mt-8 text-sm leading-7 text-muted">
+            
+            <div className="mt-8 rounded-3xl bg-white/80 p-5 shadow-card">
+              <p className="font-serif text-3xl text-deep md:text-4xl">550名以上</p>
+              <p className="mt-2 text-sm leading-7 text-muted">
+                すでに同じような悩みや生きづらさを抱える方々が参加しています。
+              </p>
+            </div>
+            
+            <p className="mt-6 text-sm leading-7 text-muted">
               ※医療・診断・治療を行うサービスではありません。緊急時は医療機関や専門窓口へご相談ください。
             </p>
           </div>

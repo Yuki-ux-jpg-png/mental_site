@@ -180,7 +180,7 @@ export default function Page() {
               <li>・読むだけ参加OK</li>
               <li>・いつでも退会可能</li>
             </ul>
-            <a href="#contact" className="mt-8 block rounded-full bg-teal px-8 py-4 font-medium text-white">申し込みについて相談する</a>
+            <a href="https://buy.stripe.com/5kQaEXbEcci505s95m6c003" className="mt-8 block rounded-full bg-teal px-8 py-4 font-medium text-white">コミュニティに参加する</a>
           </div>
         </div>
       </section>

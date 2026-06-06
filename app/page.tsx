@@ -25,15 +25,71 @@ const faqs = [
 export default function Page() {
   return (
     <main>
-      <nav className="fixed top-0 z-50 w-full border-b border-white/60 bg-cream/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
-          <a href="#top" className="font-serif text-xl tracking-wide text-deep">こころの居場所</a>
-          <div className="hidden items-center gap-8 text-sm text-muted md:flex">
-            <a href="#about">できること</a>
-            <a href="#price">料金</a>
-            <a href="#faq">FAQ</a>
+      <nav className="fixed left-0 top-0 z-50 w-full px-4 pt-4 md:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-cream/85 px-4 py-3 shadow-[0_18px_60px_rgba(31,51,44,0.10)] backdrop-blur-xl md:px-5">
+          <a href="#top" className="group flex items-center gap-3">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sage text-teal shadow-card">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:scale-110"
+              >
+                <path
+                  d="M12 21C12 16.5 12 11.5 12 7"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M12 12C8.5 12 6 9.5 5 6C8.5 6 11 8.5 12 12Z"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 15C15.5 15 18 12.5 19 9C15.5 9 13 11.5 12 15Z"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+      
+            <span className="flex flex-col leading-tight">
+              <span className="font-serif text-lg tracking-wide text-deep md:text-xl">
+                こころの居場所
+              </span>
+              <span className="hidden text-xs tracking-wide text-muted sm:inline">
+                550名以上が参加中
+              </span>
+            </span>
+          </a>
+      
+          <div className="hidden items-center rounded-full bg-white/65 p-1 text-sm text-muted shadow-[inset_0_0_0_1px_rgba(255,255,255,0.55)] md:flex">
+            <a href="#about" className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep">
+              できること
+            </a>
+            <a href="#price" className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep">
+              料金
+            </a>
+            <a href="#faq" className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep">
+              FAQ
+            </a>
           </div>
-          <a href="https://buy.stripe.com/5kQaEXbEcci505s95m6c003" className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card">コミュニティに参加する</a>
+      
+          <a
+            href="https://buy.stripe.com/5kQaEXbEcci505s95m6c003"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card transition hover:-translate-y-0.5 hover:opacity-90 md:px-6"
+          >
+            参加する
+          </a>
         </div>
       </nav>
 

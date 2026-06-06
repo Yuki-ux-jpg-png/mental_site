@@ -88,9 +88,16 @@ export default function Page() {
 
       <section id="about" className="bg-sage px-6 py-24 md:px-10">
         <div className="mx-auto max-w-6xl">
-          <div className="max-w-2xl">
-            <p className="mb-4 text-sm text-muted">大切にしていること</p>
-            <h2 className="font-serif text-4xl leading-snug text-deep md:text-5xl">否定しない。比べない。無理をしない。</h2>
+          <div className="max-w-3xl">
+            <p className="mb-8 text-base font-medium tracking-wide text-teal">
+              私たちが大切にしていること
+            </p>
+          
+            <h2 className="font-serif text-5xl leading-tight text-deep md:text-7xl">
+              否定しない。<br />
+              比べない。<br />
+              無理をしない。
+            </h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {features.map(([title, text, Icon]) => (

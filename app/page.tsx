@@ -52,7 +52,7 @@ export default function Page() {
             </div>
             
             <div className="mt-8 rounded-3xl bg-white/80 p-5 shadow-card">
-              <p className="font-serif text-3xl text-deep md:text-4xl">550名以上</p>
+              <p className="text-4xl font-bold text-deep md:text-5xl">550名以上</p>
               <p className="mt-2 text-sm leading-7 text-muted">
                 すでに同じような悩みや生きづらさを抱える方々が参加しています。
               </p>

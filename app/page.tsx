@@ -202,7 +202,11 @@ export default function Page() {
       <section id="contact" className="bg-deep px-6 py-24 text-white md:px-10">
         <div className="mx-auto max-w-4xl text-center">
           <Sparkles className="mx-auto mb-8 h-10 w-10 text-sage" />
-          <h2 className="font-serif text-4xl leading-snug md:text-5xl">安心して過ごせる場所を<br />探しているあなたへ</h2>
+          <h2 className="font-serif text-4xl leading-snug text-white md:text-5xl">
+            <span className="block">安心して過ごせる</span>
+            <span className="block">場所を探している</span>
+            <span className="block">あなたへ</span>
+          </h2>
         </div>
       </section>
 

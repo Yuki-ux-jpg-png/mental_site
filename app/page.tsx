@@ -33,7 +33,7 @@ export default function Page() {
             <a href="#price">料金</a>
             <a href="#faq">FAQ</a>
           </div>
-          <a href="#price" className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card">コミュニティに参加する</a>
+          <a href="https://buy.stripe.com/5kQaEXbEcci505s95m6c003" className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card">コミュニティに参加する</a>
         </div>
       </nav>
 
@@ -47,7 +47,7 @@ export default function Page() {
               焦らなくていい。無理をしなくていい。あなたのペースで過ごせる居場所です。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="#price" className="rounded-full bg-teal px-8 py-4 text-center font-medium text-white shadow-card">コミュニティに参加する</a>
+              <a href="https://buy.stripe.com/5kQaEXbEcci505s95m6c003" className="rounded-full bg-teal px-8 py-4 text-center font-medium text-white shadow-card">コミュニティに参加する</a>
               <a href="#about" className="rounded-full border border-deep/10 bg-white px-8 py-4 text-center font-medium text-deep">詳しく見る</a>
             </div>
             

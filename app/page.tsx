@@ -12,7 +12,7 @@ const worries = [
 const features = [
   ['安心して話せる居場所', '否定や説教、無理な励ましをしない、穏やかなコミュニティです。', Shield],
   ['自分のペースで参加', '読むだけ、時々話すだけでも大丈夫。参加の形は自由です。', Leaf],
-  ['定期オンライン交流会', '少人数で、静かに話せる時間を用意しています。', MessageCircle],
+  ['定期オンライン交流会', '将来的に少人数で安心して話せる交流会の開催を予定しています。', MessageCircle],
 ];
 
 const faqs = [
@@ -105,7 +105,7 @@ export default function Page() {
             <div className="mt-8"><span className="text-5xl font-semibold text-deep">¥50</span><span className="text-muted"> / 月</span></div>
             <ul className="mt-8 space-y-4 text-left leading-7 text-muted">
               <li>・会員限定コミュニティ参加</li>
-              <li>・月数回のオンライン交流会</li>
+              <li>・今後、オンライン交流会の開催を予定</li>
               <li>・読むだけ参加OK</li>
               <li>・いつでも退会可能</li>
             </ul>
@@ -132,10 +132,6 @@ export default function Page() {
         <div className="mx-auto max-w-4xl text-center">
           <Sparkles className="mx-auto mb-8 h-10 w-10 text-sage" />
           <h2 className="font-serif text-4xl leading-snug md:text-5xl">安心して過ごせる場所を<br />探しているあなたへ</h2>
-          <p className="mx-auto mt-6 max-w-2xl leading-8 text-white/75">
-            参加前の質問や不安なことがあれば、まずはお問い合わせください。
-          </p>
-          <a href="mailto:hello@example.com" className="mt-10 inline-block rounded-full bg-white px-9 py-4 font-medium text-deep">お問い合わせする</a>
         </div>
       </section>
 

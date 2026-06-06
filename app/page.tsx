@@ -32,9 +32,8 @@ export default function Page() {
             <a href="#about">できること</a>
             <a href="#price">料金</a>
             <a href="#faq">FAQ</a>
-            <a href="#contact">お問い合わせ</a>
           </div>
-          <a href="#price" className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card">参加を検討する</a>
+          <a href="#price" className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card">コミュニティに参加する</a>
         </div>
       </nav>
 
@@ -48,7 +47,7 @@ export default function Page() {
               焦らなくていい。無理をしなくていい。あなたのペースで過ごせる居場所です。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="#price" className="rounded-full bg-teal px-8 py-4 text-center font-medium text-white shadow-card">メンバーシップを見る</a>
+              <a href="#price" className="rounded-full bg-teal px-8 py-4 text-center font-medium text-white shadow-card">コミュニティに参加する</a>
               <a href="#about" className="rounded-full border border-deep/10 bg-white px-8 py-4 text-center font-medium text-deep">詳しく見る</a>
             </div>
             <p className="mt-8 text-sm leading-7 text-muted">
@@ -142,11 +141,6 @@ export default function Page() {
 
       <footer className="bg-cream px-6 py-10 text-center text-sm text-muted md:px-10">
         <p>© 2026 こころの居場所</p>
-        <div className="mt-4 flex justify-center gap-5">
-          <a>利用規約</a>
-          <a>プライバシーポリシー</a>
-          <a>特定商取引法表記</a>
-        </div>
       </footer>
     </main>
   );

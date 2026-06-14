@@ -145,13 +145,22 @@ export default function Page() {
           </a>
 
           <div className="hidden items-center rounded-full bg-white/65 p-1 text-sm text-muted shadow-[inset_0_0_0_1px_rgba(255,255,255,0.55)] md:flex">
-            <a href="#about" className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep">
+            <a
+              href="#about"
+              className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep"
+            >
               できること
             </a>
-            <a href="#price" className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep">
+            <a
+              href="#price"
+              className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep"
+            >
               料金
             </a>
-            <a href="#faq" className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep">
+            <a
+              href="#faq"
+              className="rounded-full px-5 py-2 transition hover:bg-sage hover:text-deep"
+            >
               FAQ
             </a>
           </div>
@@ -219,10 +228,16 @@ export default function Page() {
             <div className="absolute -left-8 -top-8 h-44 w-44 rounded-full bg-blue blur-3xl" />
 
             <div className="relative overflow-hidden rounded-large bg-white shadow-soft">
-              <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop"
-                alt="穏やかな部屋"
+              <video
+                src="/kokoro-hero.mp4"
                 className="h-[430px] w-full object-cover md:h-[540px]"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop"
+                aria-label="こころの居場所の紹介動画"
               />
             </div>
           </div>
@@ -237,7 +252,10 @@ export default function Page() {
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {worries.map(([title, text]) => (
-              <div key={title} className="rounded-large bg-white p-8 text-left shadow-card">
+              <div
+                key={title}
+                className="rounded-large bg-white p-8 text-left shadow-card"
+              >
                 <Heart className="mb-5 h-7 w-7 text-teal" />
                 <h3 className="text-xl font-medium text-deep">{title}</h3>
                 <p className="mt-3 leading-7 text-muted">{text}</p>

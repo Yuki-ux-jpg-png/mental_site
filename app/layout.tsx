@@ -23,14 +23,6 @@ export const metadata: Metadata = {
       '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。安心してつながれるオンラインの居場所です。',
     url: 'https://kokoro-no-ibasho.vercel.app/',
     siteName: 'こころの居場所',
-    images: [
-      {
-        url: 'https://kokoro-no-ibasho.vercel.app/ogp.png',
-        width: 1200,
-        height: 630,
-        alt: 'こころの居場所 | ひとりで抱えなくていい',
-      },
-    ],
     locale: 'ja_JP',
     type: 'website',
   },
@@ -39,7 +31,6 @@ export const metadata: Metadata = {
     title: 'こころの居場所 | ひとりで抱えなくていい',
     description:
       '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。安心してつながれるオンラインの居場所です。',
-    images: ['https://kokoro-no-ibasho.vercel.app/ogp.png'],
   },
 };
 

@@ -13,24 +13,33 @@ const serif = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mental-site.vercel.app'),
-  title: 'こころの居場所 | 占い・人生相談・安心できるコミュニティ',
+  metadataBase: new URL('https://kokoro-no-ibasho.vercel.app'),
+  title: 'こころの居場所 | ひとりで抱えなくていい',
   description:
-    '550名以上が参加。心の不調や生きづらさを抱える方が、占い・人生相談・コミュニティを通じて安心してつながれる場所です。',
+    '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。占い・人生相談・コミュニティを通じて、安心してつながれるオンラインの居場所です。',
   openGraph: {
     title: 'こころの居場所 | ひとりで抱えなくていい',
     description:
-      '550名以上が参加。占い・人生相談・コミュニティを通じて、安心してつながれるオンラインの居場所です。',
-    url: 'https://mental-site.vercel.app/',
+      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。安心してつながれるオンラインの居場所です。',
+    url: 'https://kokoro-no-ibasho.vercel.app/',
     siteName: 'こころの居場所',
+    images: [
+      {
+        url: 'https://kokoro-no-ibasho.vercel.app/ogp.png',
+        width: 1200,
+        height: 630,
+        alt: 'こころの居場所 | ひとりで抱えなくていい',
+      },
+    ],
     locale: 'ja_JP',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'こころの居場所 | 占い・人生相談・安心できるコミュニティ',
+    title: 'こころの居場所 | ひとりで抱えなくていい',
     description:
-      '550名以上が参加。占い・人生相談・コミュニティを通じて、安心してつながれるオンラインの居場所です。',
+      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。安心してつながれるオンラインの居場所です。',
+    images: ['https://kokoro-no-ibasho.vercel.app/ogp.png'],
   },
 };
 

@@ -228,16 +228,10 @@ export default function Page() {
             <div className="absolute -left-8 -top-8 h-44 w-44 rounded-full bg-blue blur-3xl" />
 
             <div className="relative overflow-hidden rounded-large bg-white shadow-soft">
-              <video
-                src="/kokoro-hero.mp4"
+              <img
+                src="/hero.png"
+                alt="こころの居場所を表す温かい部屋"
                 className="h-[430px] w-full object-cover md:h-[540px]"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop"
-                aria-label="こころの居場所の紹介動画"
               />
             </div>
           </div>

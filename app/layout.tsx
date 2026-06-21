@@ -13,19 +13,19 @@ const serif = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kokoro-no-ibasho.vercel.app'),
+  metadataBase: new URL('https://kokoro-ibasho.vercel.app'),
   title: 'こころの居場所 | ひとりで抱えなくていい',
   description:
-    '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。占い・人生相談・コミュニティを通じて、安心してつながれるオンラインの居場所です。',
+    '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
   openGraph: {
     title: 'こころの居場所 | ひとりで抱えなくていい',
     description:
-      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。安心してつながれるオンラインの居場所です。',
-    url: 'https://kokoro-no-ibasho.vercel.app/',
+      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
+    url: 'https://kokoro-ibasho.vercel.app/',
     siteName: 'こころの居場所',
     images: [
       {
-        url: 'https://kokoro-no-ibasho.vercel.app/threads-card.png',
+        url: 'https://kokoro-ibasho.vercel.app/threads-card.png',
         width: 1200,
         height: 630,
         alt: 'こころの居場所 | ひとりで抱えなくていい',
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'こころの居場所 | ひとりで抱えなくていい',
     description:
-      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。安心してつながれるオンラインの居場所です。',
-    images: ['https://kokoro-no-ibasho.vercel.app/threads-card.png'],
+      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
+    images: ['https://kokoro-ibasho.vercel.app/threads-card.png'],
   },
 };
 

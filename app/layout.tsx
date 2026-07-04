@@ -15,11 +15,11 @@ const serif = Noto_Serif_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kokoro-ibasho.vercel.app'),
-  title: 'こころの居場所 | ひとりで抱えなくていい',
+  title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
   description:
     '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
   openGraph: {
-    title: 'こころの居場所 | ひとりで抱えなくていい',
+    title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
     description:
       '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
     url: 'https://kokoro-ibasho.vercel.app/',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'こころの居場所 | ひとりで抱えなくていい',
+    title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
     description:
       '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
     images: ['https://kokoro-ibasho.vercel.app/threads-card.png'],

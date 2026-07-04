@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: 'https://kokoro-ibasho.vercel.app/threads-card.png',
         width: 1200,
         height: 630,
-        alt: 'こころの居場所 | ひとりで抱えなくていい',
+        alt: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
       },
     ],
     locale: 'ja_JP',

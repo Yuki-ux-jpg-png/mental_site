@@ -1,6 +1,8 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
 import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google';
+
 import { Analytics } from '@vercel/analytics/next';
 
 const sans = Noto_Sans_JP({
@@ -13,33 +15,56 @@ const serif = Noto_Serif_JP({
   variable: '--font-serif',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#F8F3EA',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://kokoro-ibasho.vercel.app'),
+
   title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+
   description:
-    '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
+    'こころの悩みを解決する総合ケアサービス。相談、つながり、ケアを通じて、あなたのこころを支えます。',
+
   openGraph: {
     title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+
     description:
-      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
+      'こころの悩みを解決する総合ケアサービス。相談、つながり、ケアを通じて、あなたのこころを支えます。',
+
     url: 'https://kokoro-ibasho.vercel.app/',
+
     siteName: 'こころの居場所',
+
     images: [
       {
         url: 'https://kokoro-ibasho.vercel.app/threads-card.png',
+
         width: 1200,
+
         height: 630,
+
         alt: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
       },
     ],
+
     locale: 'ja_JP',
+
     type: 'website',
   },
+
   twitter: {
     card: 'summary_large_image',
+
     title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+
     description:
-      '心の調子、人間関係、仕事、家庭環境に悩んでいる方へ。やさしく寄り添う実践情報を届けるコミュニティです。',
+      'こころの悩みを解決する総合ケアサービス。相談、つながり、ケアを通じて、あなたのこころを支えます。',
+
     images: ['https://kokoro-ibasho.vercel.app/threads-card.png'],
   },
 };

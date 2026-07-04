@@ -13,6 +13,14 @@ import {
 
 const stripeUrl = 'https://buy.stripe.com/5kQaEXbEcci505s95m6c003';
 
+const ctaLabel = '月50円で安心できる居場所に参加する';
+
+const reassuranceItems = [
+  'ニックネーム参加OK',
+  '読むだけ参加OK',
+  'いつでも退会可能',
+];
+
 const worries = [
   ['朝起きるのがつらい', '無理に元気なふりをしなくても大丈夫。'],
   ['誰にも本音を話せない', '言葉にならない気持ちも、そのままで。'],
@@ -39,7 +47,7 @@ const features: Feature[] = [
     title: '1人1人に向けた人生相談',
     text: 'あなたの状況や悩みに合わせて、最適な精神科医が個別にチャットもしくはオンライン面談で相談に乗るサービスです。',
     icon: User,
-    label: '新サービス',
+    label: '相談',
   },
   {
     title: '職業紹介サポート',
@@ -53,20 +61,32 @@ const features: Feature[] = [
   },
   {
     title: '心を楽にするための記事',
-    text: '定期的に心を楽にするための記事をお届けします',
+    text: '定期的に心を楽にするための記事をお届けします。',
     icon: Leaf,
   },
   {
     title: 'オンライン精神科相談・お薬配送',
     text: 'オンラインで精神科医に相談し、各種精神薬を自宅にお届けできます。家に向かわずに購入することが可能です。',
     icon: Heart,
-    label: '新サービス',
+    label: 'オンライン対応',
   },
   {
     title: '1人1人の願いや悩みに寄り添う開運・ヒーリングアイテム',
     text: '恋愛・仕事・人間関係・将来への不安など、お客様それぞれの状況や想いに合わせて、心を支えるアイテムをお届けするサービスです。お守りのように日常に寄り添い、気持ちを整えながら、自分の願いに向き合うきっかけとして活用できます。',
     icon: Sparkles,
   },
+];
+
+const priceItems = [
+  '550名以上が参加する会員限定コミュニティ',
+  '1人1人に向けた人生相談サービス',
+  'オンライン精神科相談・お薬配送',
+  '対面での交流会',
+  '心を楽にするための記事',
+  '職業紹介サポート',
+  '開運・ヒーリングアイテム',
+  '読むだけ参加OK',
+  'いつでも退会可能',
 ];
 
 const faqs = [
@@ -79,30 +99,30 @@ const faqs = [
     'いつでも退会できます。無理に続ける必要はありません。',
   ],
   [
-    '占いサービスはどんな内容ですか？',
-    '1日1回、気持ちを整えるきっかけになる占いをお届けします。未来を断定するものではなく、日々を少し前向きに過ごすためのコンテンツです。',
+    '話すのが苦手でも参加できますか？',
+    'はい。読むだけの参加も歓迎しています。',
+  ],
+  [
+    'どんなサービスが使えますか？',
+    '安心して話せるコミュニティ、人生相談、記事、交流会、職業紹介サポート、オンライン相談、ヒーリングアイテムなどを利用できます。',
   ],
   [
     '人生相談はどのように受けられますか？',
-    '参加後、あなたの状況や悩みに合わせて、個別に言葉を届ける相談サービスを利用できます。',
+    'あなたの状況や悩みに合わせて、個別にチャットまたはオンライン面談で相談できます。',
   ],
   [
-    '職業紹介は今すぐ受けられますか？',
-    '現時点では準備中です。将来的に、心の不調を抱える方が無理なく働ける選択肢を広げられるよう検討しています。',
+    'オンライン精神科相談やお薬配送は利用できますか？',
+    'オンラインで精神科医に相談し、必要に応じて自宅でお薬を受け取れるサービスを案内しています。',
   ],
   [
-    '医療サービスですか？',
-    'いいえ。こころの居場所は医療・診断・治療を行うサービスではありません。緊急時は医療機関や相談窓口をご利用ください。',
-  ],
-  [
-    '話すのが苦手でも参加できますか？',
-    'はい。読むだけの参加も歓迎しています。',
+    '決済後はどうなりますか？',
+    '安全な決済ページでお支払い後、参加方法をご案内します。',
   ],
 ];
 
 export default function Page() {
   return (
-    <main>
+    <main className="pb-20 md:pb-0">
       <nav className="fixed left-0 top-0 z-50 w-full px-4 pt-4 md:px-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-cream/85 px-4 py-3 shadow-[0_18px_60px_rgba(31,51,44,0.10)] backdrop-blur-xl md:px-5">
           <a href="#top" className="group flex items-center gap-3">
@@ -173,18 +193,29 @@ export default function Page() {
             href={stripeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-teal px-5 py-3 text-sm font-medium text-white shadow-card transition hover:-translate-y-0.5 hover:opacity-90 md:px-6"
+            className="rounded-full bg-teal px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_38px_rgba(23,99,90,0.24)] transition hover:-translate-y-0.5 hover:opacity-90 md:px-6"
           >
-            参加する
+            月50円で参加
           </a>
         </div>
       </nav>
+
+      <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
+        <a
+          href={stripeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-full bg-teal px-6 py-4 text-center font-semibold text-white shadow-[0_18px_50px_rgba(23,99,90,0.32)]"
+        >
+          月50円で参加する
+        </a>
+      </div>
 
       <section id="top" className="min-h-screen bg-cream px-6 pt-32 md:px-10">
         <div className="mx-auto grid max-w-7xl items-center gap-12 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
           <div>
             <p className="mb-6 inline-flex rounded-full bg-sage px-5 py-2 text-sm text-muted">
-              オンラインコミュニティ
+              こころの悩みを解決する総合ケアサービス
             </p>
 
             <h1 className="font-serif text-5xl leading-tight tracking-wide text-deep md:text-7xl">
@@ -194,8 +225,8 @@ export default function Page() {
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-9 text-muted">
-              同じ悩みを抱える仲間と、安心してつながれるオンラインコミュニティ。
-              焦らなくていい。無理をしなくていい。あなたのペースで過ごせる居場所です。
+              相談、つながり、記事、交流会などを通じて、あなたのこころを支える月50円の総合ケアサービスです。
+              焦らなくていい。無理をしなくていい。あなたのペースで過ごせます。
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -203,18 +234,33 @@ export default function Page() {
                 href={stripeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-teal px-8 py-4 text-center font-medium text-white shadow-card"
+                className="rounded-full bg-teal px-8 py-5 text-center font-semibold text-white shadow-[0_18px_50px_rgba(23,99,90,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(23,99,90,0.34)] md:px-10"
               >
-                コミュニティに参加する
+                {ctaLabel}
               </a>
 
               <a
                 href="#about"
-                className="rounded-full border border-deep/10 bg-white px-8 py-4 text-center font-medium text-deep"
+                className="rounded-full border border-deep/10 bg-white px-8 py-5 text-center font-medium text-deep transition hover:-translate-y-0.5 hover:bg-sage"
               >
-                詳しく見る
+                サービス内容を見る
               </a>
             </div>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {reassuranceItems.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full bg-white/85 px-4 py-2 text-sm text-muted shadow-card"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <p className="mt-4 text-sm leading-7 text-muted">
+              ボタンを押すと、安全な決済ページに移動します。決済後、参加方法をご案内します。
+            </p>
 
             <div className="mt-8 rounded-3xl bg-white/80 p-5 shadow-card">
               <p className="text-5xl font-bold text-teal md:text-6xl">550+</p>
@@ -225,7 +271,7 @@ export default function Page() {
             </div>
 
             <p className="mt-6 text-sm leading-7 text-muted">
-              ※医療・診断・治療を行うサービスではありません。緊急時は医療機関や専門窓口へご相談ください。
+              ※緊急時や症状が強い場合は、医療機関や専門窓口へご相談ください。
             </p>
           </div>
 
@@ -252,7 +298,7 @@ export default function Page() {
             {worries.map(([title, text]) => (
               <div
                 key={title}
-                className="rounded-large bg-white p-8 text-left shadow-card"
+                className="rounded-large bg-white p-8 text-left shadow-card transition hover:-translate-y-1 hover:shadow-soft"
               >
                 <Heart className="mb-5 h-7 w-7 text-teal" />
                 <h3 className="text-xl font-medium text-deep">{title}</h3>
@@ -271,17 +317,25 @@ export default function Page() {
             </p>
 
             <h2 className="font-serif text-5xl leading-tight text-deep md:text-7xl">
-              占いも、相談も、
+              相談も、つながりも、
               <br />
-              つながりも。
+              ケアも。
               <br />
               あなたのペースで。
             </h2>
+
+            <p className="mt-8 max-w-2xl leading-8 text-muted">
+              こころの悩みを抱える方が、ひとりで抱え込まずに頼れる場所を目指しています。
+              必要なときに、必要なサポートを選べます。
+            </p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ title, text, icon: Icon, label }) => (
-              <div key={title} className="rounded-large bg-cream p-8 shadow-card">
+              <div
+                key={title}
+                className="rounded-large bg-cream p-8 shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+              >
                 <div className="mb-6 flex items-center justify-between gap-4">
                   <Icon className="h-9 w-9 text-teal" />
 
@@ -296,6 +350,25 @@ export default function Page() {
                 <p className="mt-4 leading-8 text-muted">{text}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 rounded-[36px] bg-white/80 p-8 text-center shadow-card">
+            <p className="text-lg font-medium text-deep">
+              月50円で、相談・つながり・ケアをまとめて利用できます。
+            </p>
+
+            <a
+              href={stripeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex rounded-full bg-teal px-9 py-4 font-semibold text-white shadow-[0_18px_50px_rgba(23,99,90,0.26)] transition hover:-translate-y-0.5"
+            >
+              {ctaLabel}
+            </a>
+
+            <p className="mt-4 text-sm text-muted">
+              ニックネーム参加OK｜読むだけ参加OK｜いつでも退会可能
+            </p>
           </div>
         </div>
       </section>
@@ -318,25 +391,30 @@ export default function Page() {
               <span className="text-muted"> / 月</span>
             </div>
 
+            <p className="mt-3 text-sm text-muted">1日あたり約2円</p>
+
+            <p className="mt-6 rounded-3xl bg-cream px-5 py-4 text-left text-sm leading-7 text-muted">
+              相談、つながり、記事、交流会などを通じて、こころの悩みをひとりで抱え込まないためのサポートを受けられます。
+            </p>
+
             <ul className="mt-8 space-y-4 text-left leading-7 text-muted">
-              <li>・550名以上が参加する会員限定コミュニティ</li>
-              <li>・1人1人に向けた人生相談サービス</li>
-              <li>・職業紹介サポート</li>
-              <li>・対面での交流会</li>
-              <li>・心を楽にするための記事</li>
-              <li>・オンライン精神科相談・お薬配送</li>
-              <li>・開運・ヒーリングアイテム</li>
-              <li>・いつでも退会可能</li>
+              {priceItems.map((item) => (
+                <li key={item}>・{item}</li>
+              ))}
             </ul>
 
             <a
               href={stripeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 block rounded-full bg-teal px-8 py-4 font-medium text-white"
+              className="mt-8 block rounded-full bg-teal px-8 py-5 font-semibold text-white shadow-[0_18px_50px_rgba(23,99,90,0.28)] transition hover:-translate-y-0.5"
             >
-              コミュニティに参加する
+              月50円で今すぐ参加する
             </a>
+
+            <p className="mt-4 text-xs leading-6 text-muted">
+              ボタンを押すと、安全な決済ページに移動します。決済後、参加方法をご案内します。
+            </p>
           </div>
         </div>
       </section>
@@ -369,8 +447,7 @@ export default function Page() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl leading-8 text-white/75">
-            占い、人生相談、コミュニティを通じて、
-            あなたが少しでも安心して過ごせる時間をつくります。
+            相談、つながり、ケアを通じて、あなたが少しでも安心して過ごせる時間をつくります。
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -378,9 +455,9 @@ export default function Page() {
               href={stripeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-white px-9 py-4 font-medium text-deep"
+              className="rounded-full bg-white px-9 py-5 font-semibold text-deep shadow-[0_18px_50px_rgba(255,255,255,0.16)] transition hover:-translate-y-0.5"
             >
-              コミュニティに参加する
+              {ctaLabel}
             </a>
 
             <div className="flex items-center gap-2 text-sm text-white/70">
@@ -388,13 +465,17 @@ export default function Page() {
               <span>550名以上が参加中</span>
             </div>
           </div>
+
+          <p className="mt-5 text-sm text-white/60">
+            ニックネーム参加OK｜読むだけ参加OK｜いつでも退会可能
+          </p>
         </div>
       </section>
 
       <footer className="bg-cream px-6 py-10 text-center text-sm text-muted md:px-10">
         <p>© 2026 こころの居場所</p>
         <p className="mt-3">
-          医療・診断・治療を行うサービスではありません。
+          緊急時や症状が強い場合は、医療機関や専門窓口へご相談ください。
         </p>
       </footer>
     </main>

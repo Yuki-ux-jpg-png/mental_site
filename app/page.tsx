@@ -62,6 +62,11 @@ const features: Feature[] = [
     icon: Heart,
     label: '新サービス',
   },
+  {
+    title: '1人1人の願いや悩みに寄り添う開運・ヒーリングアイテム',
+    text: '恋愛・仕事・人間関係・将来への不安など、お客様それぞれの状況や想いに合わせて、心を支えるアイテムをお届けするサービスです。お守りのように日常に寄り添い、気持ちを整えながら、自分の願いに向き合うきっかけとして活用できます。',
+    icon: Sparkles,
+  },
 ];
 
 const faqs = [
@@ -202,6 +207,7 @@ export default function Page() {
               >
                 コミュニティに参加する
               </a>
+
               <a
                 href="#about"
                 className="rounded-full border border-deep/10 bg-white px-8 py-4 text-center font-medium text-deep"
@@ -314,11 +320,12 @@ export default function Page() {
 
             <ul className="mt-8 space-y-4 text-left leading-7 text-muted">
               <li>・550名以上が参加する会員限定コミュニティ</li>
-              <li>・1日1回の占いサービス</li>
               <li>・1人1人に向けた人生相談サービス</li>
-              <li>・今後、オンライン交流会の開催を予定</li>
-              <li>・将来的に職業紹介サポートを検討</li>
-              <li>・読むだけ参加OK</li>
+              <li>・職業紹介サポート</li>
+              <li>・対面での交流会</li>
+              <li>・心を楽にするための記事</li>
+              <li>・オンライン精神科相談・お薬配送</li>
+              <li>・開運・ヒーリングアイテム</li>
               <li>・いつでも退会可能</li>
             </ul>
 

@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+
 import {
   Briefcase,
   Heart,
@@ -31,37 +32,35 @@ type Feature = {
 const features: Feature[] = [
   {
     title: '安心して話せる居場所',
-    text: '否定や説教、無理な励ましをしない、穏やかなコミュニティです。',
+    text: '否定や説教、無理な励ましをしない、穏やかなオンラインコミュニティです。',
     icon: Shield,
   },
   {
-    title: '1日1回の占いサービス',
-    text: '毎日ひとつ、気持ちを整えるきっかけになる占いをお届けします。',
-    icon: Sparkles,
-    label: '新サービス',
-  },
-  {
     title: '1人1人に向けた人生相談',
-    text: 'あなたの状況や悩みに合わせて、個別に言葉を届ける相談サービスです。',
+    text: 'あなたの状況や悩みに合わせて、最適な精神科医が個別にチャットもしくはオンライン面談で相談に乗るサービスです。',
     icon: User,
     label: '新サービス',
   },
   {
-    title: '自分のペースで参加',
-    text: '読むだけ、時々話すだけでも大丈夫。参加の形は自由です。',
+    title: '職業紹介サポート',
+    text: '将来的に、心の不調を抱える方向けの働き方や職業紹介の支援を行います。',
+    icon: Briefcase,
+  },
+  {
+    title: '対面での交流会',
+    text: '定期的に少人数で安心して話せる対面での交流会の開催を行っています。',
+    icon: MessageCircle,
+  },
+  {
+    title: '心を楽にするための記事',
+    text: '定期的に心を楽にするための記事をお届けします',
     icon: Leaf,
   },
   {
-    title: '交流会を企画中',
-    text: '将来的に少人数で安心して話せる交流会の開催を予定しています。',
-    icon: MessageCircle,
-    label: '準備中',
-  },
-  {
-    title: '職業紹介サポートを準備中',
-    text: '将来的に、心の不調を抱える方向けの働き方や職業紹介の支援を検討しています。',
-    icon: Briefcase,
-    label: '将来構想',
+    title: 'オンライン精神科相談・お薬配送',
+    text: 'オンラインで精神科医に相談し、各種精神薬を自宅にお届けできます。家に向かわずに購入することが可能です。',
+    icon: Heart,
+    label: '新サービス',
   },
 ];
 
@@ -184,7 +183,8 @@ export default function Page() {
             </p>
 
             <h1 className="font-serif text-5xl leading-tight tracking-wide text-deep md:text-7xl">
-              ひとりで<br />
+              ひとりで
+              <br />
               抱えなくていい。
             </h1>
 
@@ -202,7 +202,6 @@ export default function Page() {
               >
                 コミュニティに参加する
               </a>
-
               <a
                 href="#about"
                 className="rounded-full border border-deep/10 bg-white px-8 py-4 text-center font-medium text-deep"
@@ -226,7 +225,6 @@ export default function Page() {
 
           <div className="relative">
             <div className="absolute -left-8 -top-8 h-44 w-44 rounded-full bg-blue blur-3xl" />
-
             <div className="relative overflow-hidden rounded-large bg-white shadow-soft">
               <img
                 src="/hero.png"
@@ -267,8 +265,10 @@ export default function Page() {
             </p>
 
             <h2 className="font-serif text-5xl leading-tight text-deep md:text-7xl">
-              占いも、相談も、<br />
-              つながりも。<br />
+              占いも、相談も、
+              <br />
+              つながりも。
+              <br />
               あなたのペースで。
             </h2>
           </div>
@@ -278,6 +278,7 @@ export default function Page() {
               <div key={title} className="rounded-large bg-cream p-8 shadow-card">
                 <div className="mb-6 flex items-center justify-between gap-4">
                   <Icon className="h-9 w-9 text-teal" />
+
                   {label ? (
                     <span className="rounded-full bg-white px-3 py-1 text-xs text-muted">
                       {label}
@@ -296,6 +297,7 @@ export default function Page() {
       <section id="price" className="bg-cream px-6 py-24 md:px-10">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="font-serif text-4xl text-deep md:text-5xl">料金</h2>
+
           <p className="mt-5 text-muted">
             毎日使える安心のメンバーシップです。
           </p>

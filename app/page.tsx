@@ -14,6 +14,8 @@ import {
   Users,
 } from 'lucide-react';
 
+import TrackedStripeLink from './components/TrackedStripeLink';
+
 const stripeUrl = 'https://buy.stripe.com/5kQaEXbEcci505s95m6c003';
 
 const ctaLabel = '月50円で参加する';
@@ -49,13 +51,6 @@ const worries = [
     '相談先が分からない',
     '精神科や相談窓口など、必要な情報を知るきっかけを得られます。',
   ],
-];
-
-const testimonials = [
-  {
-    text: '心が辛い時、相談する先ができてとても心が楽になり生きやすくなった',
-    name: '参加者の声',
-  },
 ];
 
 type Feature = {
@@ -154,20 +149,21 @@ const faqs = [
 
 function PrimaryButton({
   children,
+  location,
   className = '',
 }: {
   children: ReactNode;
+  location: string;
   className?: string;
 }) {
   return (
-    <a
+    <TrackedStripeLink
       href={stripeUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      location={location}
       className={`inline-flex w-full items-center justify-center rounded-full bg-teal px-6 py-4 text-center text-[15px] font-semibold leading-6 text-white shadow-[0_18px_50px_rgba(23,99,90,0.34)] transition active:scale-[0.98] sm:w-auto sm:px-9 md:hover:-translate-y-0.5 ${className}`}
     >
       {children}
-    </a>
+    </TrackedStripeLink>
   );
 }
 
@@ -218,26 +214,24 @@ export default function Page() {
             </span>
           </a>
 
-          <a
+          <TrackedStripeLink
             href={stripeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            location="header"
             className="shrink-0 rounded-full bg-teal px-4 py-3 text-xs font-semibold text-white shadow-[0_12px_34px_rgba(23,99,90,0.24)] transition active:scale-[0.98] md:px-6 md:text-sm md:hover:-translate-y-0.5"
           >
             月50円で参加
-          </a>
+          </TrackedStripeLink>
         </div>
       </nav>
 
       <div className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] left-3 right-3 z-50 md:hidden">
-        <a
+        <TrackedStripeLink
           href={stripeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          location="mobile_fixed_bottom"
           className="flex items-center justify-center rounded-full bg-teal px-5 py-4 text-center text-[15px] font-semibold text-white shadow-[0_18px_50px_rgba(23,99,90,0.38)] active:scale-[0.98]"
         >
           月50円で参加する
-        </a>
+        </TrackedStripeLink>
 
         <p className="mt-2 text-center text-[11px] leading-5 text-muted">
           匿名OK・読むだけOK・いつでも退会可能
@@ -266,7 +260,9 @@ export default function Page() {
             </p>
 
             <div className="mt-6 md:mt-10">
-              <PrimaryButton>月50円でコミュニティに参加する</PrimaryButton>
+              <PrimaryButton location="hero">
+                月50円でコミュニティに参加する
+              </PrimaryButton>
             </div>
 
             <div className="mt-4 grid grid-cols-1 gap-2">
@@ -420,7 +416,9 @@ export default function Page() {
             </p>
 
             <div className="mt-5">
-              <PrimaryButton>月50円で参加してみる</PrimaryButton>
+              <PrimaryButton location="about_cta">
+                月50円で参加してみる
+              </PrimaryButton>
             </div>
 
             <p className="mt-4 text-xs leading-6 text-muted md:text-sm">
@@ -474,7 +472,9 @@ export default function Page() {
             </ul>
 
             <div className="mt-8">
-              <PrimaryButton>月50円で今すぐ参加する</PrimaryButton>
+              <PrimaryButton location="price_cta">
+                月50円で今すぐ参加する
+              </PrimaryButton>
             </div>
 
             <p className="mt-4 text-xs leading-6 text-muted">
@@ -530,14 +530,13 @@ export default function Page() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 md:mt-10 sm:flex-row">
-            <a
+            <TrackedStripeLink
               href={stripeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              location="final_cta"
               className="inline-flex w-full items-center justify-center rounded-full bg-white px-7 py-4 text-center text-[15px] font-semibold text-deep shadow-[0_18px_50px_rgba(255,255,255,0.16)] transition active:scale-[0.98] sm:w-auto md:px-9 md:py-5 md:hover:-translate-y-0.5"
             >
               月50円でコミュニティに参加する
-            </a>
+            </TrackedStripeLink>
 
             <div className="flex items-center gap-2 text-sm text-white/70">
               <Users className="h-4 w-4" />

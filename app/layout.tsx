@@ -25,16 +25,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://kokoro-ibasho.vercel.app'),
 
-  title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+  title:
+    'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
 
   description:
-    'こころの悩みを解決する総合ケアサービス。相談、つながり、ケアを通じて、あなたのこころを支えます。',
+    'こころの居場所は、心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが安心できる距離感でつながれる月50円の相互支援コミュニティです。役立つ記事や、精神科・薬に関する参考情報もお届けします。',
 
   openGraph: {
-    title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+    title:
+      'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
 
     description:
-      'こころの悩みを解決する総合ケアサービス。相談、つながり、ケアを通じて、あなたのこころを支えます。',
+      '心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる月50円の相互支援コミュニティです。',
 
     url: 'https://kokoro-ibasho.vercel.app/',
 
@@ -43,12 +45,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://kokoro-ibasho.vercel.app/threads-card.png',
-
         width: 1200,
-
         height: 630,
-
-        alt: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+        alt: 'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
       },
     ],
 
@@ -60,10 +59,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
 
-    title: 'こころの居場所 | こころの悩みを解決する総合ケアサービス',
+    title:
+      'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
 
     description:
-      'こころの悩みを解決する総合ケアサービス。相談、つながり、ケアを通じて、あなたのこころを支えます。',
+      '心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる月50円の相互支援コミュニティです。',
 
     images: ['https://kokoro-ibasho.vercel.app/threads-card.png'],
   },

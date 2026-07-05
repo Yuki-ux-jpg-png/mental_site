@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kokoro-ibasho.vercel.app'),
+  metadataBase: new URL('https://mental-ibasho.vercel.app'),
 
   title:
     'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     description:
       '心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる月50円の相互支援コミュニティです。',
 
-    url: 'https://kokoro-ibasho.vercel.app/',
+    url: 'https://mental-ibasho.vercel.app/',
 
     siteName: 'こころの居場所',
 
     images: [
       {
-        url: 'https://kokoro-ibasho.vercel.app/threads-card.png',
+        url: 'https://mental-ibasho.vercel.app/threads-card.png',
         width: 1200,
         height: 630,
         alt: 'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     description:
       '心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる月50円の相互支援コミュニティです。',
 
-    images: ['https://kokoro-ibasho.vercel.app/threads-card.png'],
+    images: ['https://mental-ibasho.vercel.app/threads-card.png'],
   },
 };
 

@@ -11,6 +11,7 @@ import {
   Quote,
   Shield,
   Sparkles,
+  Star,
   Users,
 } from 'lucide-react';
 
@@ -52,6 +53,62 @@ const worries = [
     '精神科や相談窓口など、必要な情報を知るきっかけを得られます。',
   ],
 ];
+
+type AvatarVariant =
+  | 'youngWoman'
+  | 'youngMan'
+  | 'adultWoman'
+  | 'adultMan'
+  | 'seniorWoman'
+  | 'seniorMan';
+
+type Testimonial = {
+  headline: string;
+  text: string;
+  profile: string;
+  variant: AvatarVariant;
+};
+
+const testimonials: Testimonial[] = [
+  {
+    profile: '20代・女性',
+    variant: 'youngWoman',
+    headline: '相談できる先があるだけで、心が軽くなった',
+    text: '心が辛い時、相談する先ができてとても心が楽になり生きやすくなった。',
+  },
+  {
+    profile: '20代・男性',
+    variant: 'youngMan',
+    headline: '発達障害の悩みを話せる場所がありがたい',
+    text: '発達障害の特性で人間関係がしんどい時も、同じような悩みを持つ人の言葉にかなり救われました。',
+  },
+  {
+    profile: '30代・女性',
+    variant: 'adultWoman',
+    headline: '読むだけでも安心できた',
+    text: '無理に話さなくても、読むだけで安心できるのがよかったです。気持ちが落ちている日でも参加しやすいです。',
+  },
+  {
+    profile: '40代・男性',
+    variant: 'adultMan',
+    headline: '否定されずに話せる場所ができた',
+    text: '仕事や家庭のことで抱え込んでいた悩みを、否定されずに話せる場所があるだけで気持ちが軽くなりました。',
+  },
+  {
+    profile: '50代・女性',
+    variant: 'seniorWoman',
+    headline: '年齢に関係なく、悩みを話せる',
+    text: '年齢を重ねても、悩みを話せる場所があるのはありがたいです。やさしい雰囲気で安心して利用できます。',
+  },
+  {
+    profile: '60代・男性',
+    variant: 'seniorMan',
+    headline: 'ひとりで悩んでいる感覚が薄れた',
+    text: 'ひとりで悩んでいる感覚が薄れました。読むだけでも参加できるので、自分のペースで続けやすいです。',
+  },
+];
+
+const featuredTestimonial = testimonials[0];
 
 type Feature = {
   title: string;
@@ -147,6 +204,100 @@ const faqs = [
   ],
 ];
 
+function RatingStars() {
+  return (
+    <div className="flex items-center gap-1 text-teal" aria-label="高評価">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <Star key={star} className="h-4 w-4 fill-current" />
+      ))}
+    </div>
+  );
+}
+
+function AvatarSilhouette({ variant }: { variant: AvatarVariant }) {
+  const wrapperClass =
+    'flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-sage text-teal shadow-card md:h-[72px] md:w-[72px]';
+
+  if (variant === 'youngWoman') {
+    return (
+      <div className={wrapperClass}>
+        <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+          <circle cx="32" cy="24" r="10" fill="currentColor" opacity="0.24" />
+          <path d="M21 28C21 19.5 25.5 14 32 14C38.5 14 43 19.5 43 28V31H21V28Z" fill="currentColor" />
+          <path d="M16 53C17.5 44 23 39 32 39C41 39 46.5 44 48 53H16Z" fill="currentColor" opacity="0.5" />
+          <path d="M23 20C24.5 15.5 28 13 32 13C36 13 39.5 15.5 41 20" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        </svg>
+      </div>
+    );
+  }
+
+  if (variant === 'youngMan') {
+    return (
+      <div className={wrapperClass}>
+        <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+          <circle cx="32" cy="24" r="10" fill="currentColor" opacity="0.24" />
+          <path d="M22 21C24 16.5 27.5 14 32 14C36.5 14 40 16.5 42 21" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          <path d="M18 53C19.5 44.5 24.5 39.5 32 39.5C39.5 39.5 44.5 44.5 46 53H18Z" fill="currentColor" opacity="0.55" />
+          <path d="M22 28V24C22 18.5 26 15 32 15C38 15 42 18.5 42 24V28" fill="currentColor" />
+        </svg>
+      </div>
+    );
+  }
+
+  if (variant === 'adultWoman') {
+    return (
+      <div className={wrapperClass}>
+        <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+          <circle cx="32" cy="24" r="10" fill="currentColor" opacity="0.24" />
+          <path d="M20 27C20 18.5 25 13 32 13C39 13 44 18.5 44 27V34H20V27Z" fill="currentColor" />
+          <path d="M15 53C16.5 44 23 39 32 39C41 39 47.5 44 49 53H15Z" fill="currentColor" opacity="0.5" />
+          <path d="M19 28C18.5 33 19.5 37 22.5 39" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+          <path d="M45 28C45.5 33 44.5 37 41.5 39" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        </svg>
+      </div>
+    );
+  }
+
+  if (variant === 'adultMan') {
+    return (
+      <div className={wrapperClass}>
+        <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+          <circle cx="32" cy="24" r="10" fill="currentColor" opacity="0.24" />
+          <path d="M21 21.5C23 16.5 27 14 32 14C37 14 41 16.5 43 21.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          <path d="M21 29V24.5C21 18.5 25 15 32 15C39 15 43 18.5 43 24.5V29" fill="currentColor" />
+          <path d="M17 53C18 44 24 39.5 32 39.5C40 39.5 46 44 47 53H17Z" fill="currentColor" opacity="0.55" />
+        </svg>
+      </div>
+    );
+  }
+
+  if (variant === 'seniorWoman') {
+    return (
+      <div className={wrapperClass}>
+        <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+          <circle cx="32" cy="24" r="10" fill="currentColor" opacity="0.24" />
+          <path d="M20 28C20 19 25 14 32 14C39 14 44 19 44 28V33H20V28Z" fill="currentColor" />
+          <path d="M15 53C16.5 44.5 22.5 40 32 40C41.5 40 47.5 44.5 49 53H15Z" fill="currentColor" opacity="0.5" />
+          <path d="M23.5 21.5C25.5 17.5 28.5 15.5 32 15.5C35.5 15.5 38.5 17.5 40.5 21.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.7" />
+          <path d="M19.5 30.5C19.5 35 21 38 23.5 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M44.5 30.5C44.5 35 43 38 40.5 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </div>
+    );
+  }
+
+  return (
+    <div className={wrapperClass}>
+      <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+        <circle cx="32" cy="24" r="10" fill="currentColor" opacity="0.24" />
+        <path d="M22 20.5C24.5 16.5 28 14.5 32 14.5C36 14.5 39.5 16.5 42 20.5" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" opacity="0.8" />
+        <path d="M21 29V24.5C21 18.5 25 15 32 15C39 15 43 18.5 43 24.5V29" fill="currentColor" />
+        <path d="M17 53C18.5 44 24 39.5 32 39.5C40 39.5 45.5 44 47 53H17Z" fill="currentColor" opacity="0.55" />
+      </svg>
+    </div>
+  );
+}
+
 function PrimaryButton({
   children,
   location,
@@ -174,33 +325,10 @@ export default function Page() {
         <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-cream/92 px-3 py-2 shadow-[0_14px_44px_rgba(31,51,44,0.12)] backdrop-blur-xl md:px-5 md:py-3">
           <a href="#top" className="flex min-w-0 items-center gap-2 md:gap-3">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sage text-teal shadow-card md:h-11 md:w-11">
-              <svg
-                width="21"
-                height="21"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 21C12 16.5 12 11.5 12 7"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12 12C8.5 12 6 9.5 5 6C8.5 6 11 8.5 12 12Z"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12 15C15.5 15 18 12.5 19 9C15.5 9 13 11.5 12 15Z"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21C12 16.5 12 11.5 12 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                <path d="M12 12C8.5 12 6 9.5 5 6C8.5 6 11 8.5 12 12Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 15C15.5 15 18 12.5 19 9C15.5 9 13 11.5 12 15Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
 
@@ -279,14 +407,21 @@ export default function Page() {
 
             <div className="mt-5 rounded-[26px] bg-white/90 p-4 shadow-card">
               <div className="flex items-start gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sage text-teal">
-                  <Quote className="h-4 w-4" />
-                </span>
+                <AvatarSilhouette variant={featuredTestimonial.variant} />
 
-                <div>
-                  <p className="text-xs font-medium text-teal">参加者の声</p>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-xs font-medium text-teal">参加者の声</p>
+                    <RatingStars />
+                  </div>
+                  <p className="mt-1 text-xs text-muted">
+                    {featuredTestimonial.profile}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold leading-7 text-deep">
+                    {featuredTestimonial.headline}
+                  </p>
                   <p className="mt-2 font-serif text-[20px] leading-relaxed text-deep">
-                    「心が辛い時、相談する先ができてとても心が楽になり生きやすくなった」
+                    「{featuredTestimonial.text}」
                   </p>
                   <p className="mt-2 text-[11px] leading-5 text-muted">
                     ※個人の感想です。感じ方には個人差があります。
@@ -360,6 +495,118 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-blue/50 px-5 py-14 md:px-10 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="mb-3 text-sm font-medium text-teal">
+              参加者の口コミ
+            </p>
+
+            <h2 className="font-serif text-3xl leading-snug text-deep md:text-5xl">
+              「相談できる場所がある」
+              <br />
+              それだけで、少し楽になる。
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted md:text-base">
+              心のつらさ、人間関係の悩み、発達障害の特性による生きづらさ。
+              ひとりで抱えていた気持ちを、安心できる距離感で分かち合える場所です。
+            </p>
+          </div>
+
+          <div className="mt-8 rounded-[30px] bg-white p-5 text-center shadow-soft md:mt-10 md:p-8">
+            <div className="flex justify-center">
+              <RatingStars />
+            </div>
+
+            <p className="mt-4 font-serif text-2xl leading-relaxed text-deep md:text-4xl">
+              「読むだけでも、ひとりじゃないと思えた」
+            </p>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted md:text-base">
+              無理に投稿しなくても大丈夫。まずは他の人の言葉を読むだけでも参加できます。
+              自分と似た悩みを持つ人がいると分かるだけで、少し安心できることがあります。
+            </p>
+
+            <div className="mt-6">
+              <PrimaryButton location="testimonial_top_cta">
+                月50円で安心して参加してみる
+              </PrimaryButton>
+            </div>
+
+            <p className="mt-4 text-xs leading-6 text-muted">
+              匿名OK｜読むだけOK｜いつでも退会可能｜安全なStripe決済
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map(({ text, profile, variant, headline }) => (
+              <div
+                key={`${profile}-${text}`}
+                className="rounded-[28px] bg-white p-5 shadow-card transition active:scale-[0.99] md:rounded-large md:p-7 md:hover:-translate-y-1 md:hover:shadow-soft"
+              >
+                <div className="flex items-start gap-4">
+                  <AvatarSilhouette variant={variant} />
+
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-deep">{profile}</p>
+                    <div className="mt-2">
+                      <RatingStars />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <p className="text-base font-semibold leading-7 text-deep">
+                    {headline}
+                  </p>
+                  <Quote className="mt-4 h-5 w-5 text-teal" />
+                  <p className="mt-3 text-sm leading-8 text-muted md:text-base md:leading-8">
+                    「{text}」
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-[30px] bg-deep p-6 text-center text-white shadow-soft md:mt-12 md:p-10">
+            <p className="text-sm font-medium text-sage">
+              ひとりで抱え込んでいる方へ
+            </p>
+
+            <h3 className="mt-4 font-serif text-3xl leading-snug text-white md:text-5xl">
+              月50円で、
+              <br className="sm:hidden" />
+              相談できる場所を持てます。
+            </h3>
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-white/75 md:text-base">
+              すぐに話さなくても大丈夫です。まずは読むだけでも参加できます。
+              心がつらい時、人間関係で疲れた時、発達障害の特性でしんどい時に、
+              ひとりで抱え込まないための居場所です。
+            </p>
+
+            <div className="mt-7">
+              <TrackedStripeLink
+                href={stripeUrl}
+                location="testimonial_bottom_cta"
+                className="inline-flex w-full items-center justify-center rounded-full bg-white px-7 py-4 text-center text-[15px] font-semibold text-deep shadow-[0_18px_50px_rgba(255,255,255,0.16)] transition active:scale-[0.98] sm:w-auto md:px-9 md:py-5 md:hover:-translate-y-0.5"
+              >
+                月50円でコミュニティに参加する
+              </TrackedStripeLink>
+            </div>
+
+            <p className="mt-4 text-xs leading-6 text-white/60">
+              ニックネーム参加OK｜読むだけOK｜いつでも退会可能
+            </p>
+          </div>
+
+          <p className="mt-6 text-center text-xs leading-6 text-muted">
+            ※個人の感想です。感じ方には個人差があります。年齢・性別は掲載用に整理して表記しています。
+          </p>
         </div>
       </section>
 

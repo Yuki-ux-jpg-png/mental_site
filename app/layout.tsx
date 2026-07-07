@@ -1,8 +1,9 @@
 import './globals.css';
+
 import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
 
 import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google';
-
 import { Analytics } from '@vercel/analytics/next';
 
 const sans = Noto_Sans_JP({
@@ -15,6 +16,16 @@ const serif = Noto_Serif_JP({
   variable: '--font-serif',
 });
 
+const siteUrl = 'https://mental-ibasho.vercel.app';
+
+const siteTitle =
+  'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ';
+
+const siteDescription =
+  'こころの居場所は、心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが安心できる距離感でつながれる月50円の相互支援コミュニティです。読むだけ参加もでき、ニックネームで安心して参加できます。';
+
+const ogImageUrl = `${siteUrl}/threads-card.png`;
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -23,31 +34,32 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mental-ibasho.vercel.app'),
+  metadataBase: new URL(siteUrl),
 
-  title:
-    'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
+  title: siteTitle,
 
-  description:
-    'こころの居場所は、心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが安心できる距離感でつながれる月50円の相互支援コミュニティです。役立つ記事や、精神科・薬に関する参考情報もお届けします。',
+  description: siteDescription,
+
+  alternates: {
+    canonical: '/',
+  },
 
   openGraph: {
-    title:
-      'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
+    title: siteTitle,
 
-    description:
-      '心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる月50円の相互支援コミュニティです。',
+    description: siteDescription,
 
-    url: 'https://mental-ibasho.vercel.app/',
+    url: siteUrl,
 
     siteName: 'こころの居場所',
 
     images: [
       {
-        url: 'https://mental-ibasho.vercel.app/threads-card.png',
+        url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: 'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
+        alt: siteTitle,
+        type: 'image/png',
       },
     ],
 
@@ -59,20 +71,23 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
 
-    title:
-      'こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ',
+    title: siteTitle,
 
-    description:
-      '心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる月50円の相互支援コミュニティです。',
+    description: siteDescription,
 
-    images: ['https://mental-ibasho.vercel.app/threads-card.png'],
+    images: [ogImageUrl],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="ja">

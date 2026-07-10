@@ -1,4 +1,7 @@
 {
+  "name": "mental-site",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -6,11 +9,14 @@
   },
   "dependencies": {
     "@next/font": "latest",
+    "@stripe/react-stripe-js": "latest",
+    "@stripe/stripe-js": "latest",
     "@vercel/analytics": "latest",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "stripe": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

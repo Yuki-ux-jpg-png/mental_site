@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
-body { background: #FAFAF7; color: #20372F; }
-::selection { background: #D9E8F5; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fafaf7;
+  color: #20372f;
+  font-family: var(--font-sans), sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif), serif;
+}
+
+::selection {
+  background: #d9e8f5;
+}

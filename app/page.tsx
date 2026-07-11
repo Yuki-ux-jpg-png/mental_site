@@ -154,7 +154,7 @@ export default function HomePage() {
             href="#checkout"
             className="shrink-0 rounded-full bg-[#20372F] px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#2E4A40] sm:px-5 sm:text-sm"
           >
-            8/31まで月50円
+            月50円で参加
           </a>
         </div>
       </header>
@@ -206,7 +206,7 @@ export default function HomePage() {
                 href="#checkout"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-7 text-base font-bold text-white shadow-[0_16px_34px_rgba(201,120,85,0.24)] transition hover:-translate-y-0.5 hover:bg-[#B96C4B]"
               >
-                8/31まで月50円で参加
+                月50円で参加
               </a>
               <a
                 href="#reviews"
@@ -525,7 +525,7 @@ export default function HomePage() {
           href="#checkout"
           className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-8 font-bold text-white"
         >
-          8/31まで月50円で参加
+          月50円で参加
         </a>
       </section>
 
@@ -542,7 +542,7 @@ export default function HomePage() {
           href="#checkout"
           className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#C97855] px-5 text-sm font-bold text-white"
         >
-          8/31まで月50円で参加
+          月50円で参加
         </a>
       </div>
     </main>

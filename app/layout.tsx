@@ -17,13 +17,13 @@ const serif = Noto_Serif_JP({
 });
 
 const siteUrl =
-  process.env.SITE_URL || "https://mental-site.vercel.app";
+  process.env.SITE_URL || "https://mental-ibasho.vercel.app";
 
 const siteTitle =
   "こころの居場所 | 心・人間関係・発達障害の悩みを話せる相互支援コミュニティ";
 
 const siteDescription =
-  "こころの居場所は、心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが安心できる距離感でつながれる月50円の相互支援コミュニティです。";
+  "こころの居場所は、心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが安心できる距離感でつながれる相互支援コミュニティです。2026年8月31日までに登録した方は、契約継続中ずっと月額50円です。";
 
 export const viewport: Viewport = {
   width: "device-width",

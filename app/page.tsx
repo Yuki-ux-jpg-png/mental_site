@@ -104,7 +104,7 @@ const faqs = [
   {
     question: "月額50円の特別価格はいつまでですか？",
     answer:
-      "2026年8月31日23:59（日本時間）までに新規登録した方は月額50円です。2026年9月1日以降に新たに登録する方は月額1,000円となります。",
+      "2026年8月31日23:59（日本時間）までに新規登録した方は、契約を継続している間、ずっと月額50円です。2026年9月1日以降に新規登録する方は月額1,000円となります。",
   },
   {
     question: "どんなサービスですか？",
@@ -188,6 +188,7 @@ export default function HomePage() {
               <p className="text-xs font-bold tracking-[0.12em] text-[#A85434]">
                 8月31日23:59までに新規登録した方限定
               </p>
+
               <div className="mt-3 flex flex-wrap items-end gap-x-4 gap-y-1">
                 <span className="text-sm text-[#77837E] line-through">
                   通常 月額1,000円
@@ -196,8 +197,13 @@ export default function HomePage() {
                   月額50円
                 </span>
               </div>
-              <p className="mt-3 text-xs leading-6 text-[#62736C] sm:text-sm">
-                2026年9月1日以降の新規登録は月額1,000円となります。
+
+              <p className="mt-3 text-sm font-bold leading-6 text-[#20372F]">
+                登録後も、契約を継続している間はずっと月額50円です。
+              </p>
+
+              <p className="mt-2 text-xs leading-6 text-[#62736C] sm:text-sm">
+                2026年9月1日以降に新規登録する方は月額1,000円となります。
               </p>
             </div>
 
@@ -208,6 +214,7 @@ export default function HomePage() {
               >
                 月50円で参加
               </a>
+
               <a
                 href="#reviews"
                 className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#20372F]/15 bg-white px-7 text-base font-bold text-[#20372F]"
@@ -264,8 +271,8 @@ export default function HomePage() {
               text: "読むだけの参加も歓迎しています。",
             },
             {
-              title: "8/31まで月額50円",
-              text: "9/1以降の新規登録は月額1,000円です。",
+              title: "8/31登録ならずっと月50円",
+              text: "契約継続中は月額50円のままです。",
             },
             {
               title: "Stripeで安全に決済",
@@ -283,6 +290,7 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+
         <p className="mx-auto mt-4 max-w-3xl text-center text-[11px] leading-5 text-[#718078]">
           こころの居場所は医療サービスではありません。診断・治療・処方は行いません。
         </p>
@@ -295,16 +303,23 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-bold tracking-[0.18em] text-[#A85434] sm:text-sm">
-              2026年8月31日23:59までの特別価格
+              2026年8月31日23:59までの早期登録特典
             </p>
+
             <h2 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">
-              通常月額1,000円が、
+              <span className="text-[#77837E] line-through">
+                通常 月額1,000円
+              </span>
               <br />
-              今なら月額50円。
+              特別価格 月額50円
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#62736C] sm:text-base sm:leading-8">
-              必要事項を入力すると、このページ内で参加手続きを完了できます。
-              9月1日以降の新規登録は月額1,000円です。
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm font-bold leading-7 text-[#20372F] sm:text-base sm:leading-8">
+              期限内に登録した方は、契約を継続している間ずっと月額50円です。
+            </p>
+
+            <p className="mx-auto mt-2 max-w-2xl text-xs leading-6 text-[#62736C] sm:text-sm">
+              2026年9月1日以降に新規登録する方は月額1,000円となります。
             </p>
           </div>
 
@@ -318,9 +333,11 @@ export default function HomePage() {
                 <p className="text-xs font-bold text-[#F1C8B5]">
                   8月31日までの早期登録特典
                 </p>
+
                 <p className="mt-2 text-sm text-[#D9E5E0] line-through">
                   通常 月額1,000円
                 </p>
+
                 <div className="mt-1 flex items-end gap-2">
                   <span className="font-serif text-6xl font-bold leading-none">
                     ¥50
@@ -329,8 +346,12 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <p className="mt-4 text-sm leading-7 text-[#D9E5E0]">
-                2026年9月1日以降に新規登録する場合は、月額1,000円となります。
+              <p className="mt-4 text-sm font-bold leading-7 text-white">
+                期限内に登録した方は、契約継続中ずっと月額50円です。
+              </p>
+
+              <p className="mt-2 text-xs leading-6 text-[#D9E5E0] sm:text-sm">
+                9月1日以降に新規登録する方は月額1,000円となります。
               </p>
 
               <ul className="mt-7 space-y-3">
@@ -357,6 +378,7 @@ export default function HomePage() {
               <div className="mb-3 rounded-2xl border border-[#C97855]/20 bg-[#FFF8F4] px-4 py-3 text-center text-xs font-bold leading-5 text-[#A85434] sm:text-sm">
                 決済欄に「月額50円」と表示されることをご確認ください。
               </div>
+
               <div className="checkout-card overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5">
                 <EmbeddedCheckoutSection />
               </div>
@@ -374,11 +396,13 @@ export default function HomePage() {
             <p className="text-xs font-bold tracking-[0.18em] text-[#4F7C7D] sm:text-sm">
               参加者の口コミ
             </p>
+
             <h2 className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-tight sm:text-5xl">
               「相談できる場所がある」
               <br />
               それだけで、少し楽になる。
             </h2>
+
             <p className="mt-5 max-w-3xl text-sm leading-7 text-[#62736C] sm:text-base sm:leading-8">
               さまざまな年代の方が、それぞれのペースで参加しています。
             </p>
@@ -394,6 +418,7 @@ export default function HomePage() {
                   <p className="text-xs font-bold text-[#63746C]">
                     {testimonial.profile}
                   </p>
+
                   <div
                     className="flex gap-0.5"
                     aria-label={`5点満点中${testimonial.rating}点`}
@@ -414,6 +439,7 @@ export default function HomePage() {
                 <h3 className="mt-4 text-base font-bold leading-7 sm:text-lg">
                   {testimonial.title}
                 </h3>
+
                 <p className="mt-3 text-sm leading-7 text-[#62736C]">
                   「{testimonial.text}」
                 </p>
@@ -422,8 +448,7 @@ export default function HomePage() {
           </div>
 
           <p className="px-4 text-[11px] leading-5 text-[#718078] sm:px-6 lg:px-8">
-            ※個人の感想です。感じ方には個人差があります。掲載内容については、
-            実際の許諾状況に合わせてご確認ください。
+            ※個人の感想です。感じ方には個人差があります。
           </p>
         </div>
       </section>
@@ -437,6 +462,7 @@ export default function HomePage() {
             <p className="text-xs font-bold tracking-[0.18em] text-[#4F7C7D] sm:text-sm">
               私たちが届けたいこと
             </p>
+
             <h2 className="mt-3 font-serif text-4xl font-bold leading-[1.15] sm:text-5xl">
               話せる。
               <br />
@@ -444,6 +470,7 @@ export default function HomePage() {
               <br />
               支え合える。
             </h2>
+
             <p className="mt-5 text-sm leading-7 text-[#62736C] sm:text-base sm:leading-8">
               メインは、心や人間関係の悩み、発達障害の特性による生きづらさを持つ人たちの相互支援コミュニティです。
               その中で、定期的に役立つ記事や、精神科・薬に関する参考情報も提供します。
@@ -460,12 +487,14 @@ export default function HomePage() {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#DDEBE7] text-[#426F70]">
                     <Icon className="h-5 w-5" />
                   </span>
+
                   {badge ? (
                     <span className="rounded-full bg-[#FFF0E8] px-3 py-1 text-[10px] font-bold text-[#A85C3D]">
                       {badge}
                     </span>
                   ) : null}
                 </div>
+
                 <h3 className="mt-5 text-lg font-bold leading-7">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[#62736C]">{text}</p>
               </article>
@@ -499,6 +528,7 @@ export default function HomePage() {
                     </span>
                   </span>
                 </summary>
+
                 <p className="mt-4 text-sm leading-7 text-[#62736C] sm:text-base sm:leading-8">
                   A. {answer}
                 </p>
@@ -510,17 +540,27 @@ export default function HomePage() {
 
       <section className="bg-[#20372F] px-4 py-16 text-center text-white sm:px-6 sm:py-20 lg:px-8">
         <ShieldCheck className="mx-auto h-9 w-9 text-[#BCD3CA]" />
+
         <p className="mt-5 text-xs font-bold tracking-[0.14em] text-[#F1C8B5]">
-          2026年8月31日までの特別価格
+          2026年8月31日までの早期登録特典
         </p>
+
         <h2 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">
-          通常月額1,000円が、
+          <span className="text-[#B9C7C1] line-through">
+            通常 月額1,000円
+          </span>
           <br />
-          今なら月額50円。
+          特別価格 月額50円
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#D6E1DD] sm:text-base sm:leading-8">
-          無理に話さなくて大丈夫です。まずは読むだけでも参加できます。
+
+        <p className="mx-auto mt-5 max-w-2xl text-sm font-bold leading-7 text-white sm:text-base sm:leading-8">
+          期限内に登録した方は、契約を継続している間ずっと月額50円です。
         </p>
+
+        <p className="mx-auto mt-2 max-w-2xl text-xs leading-6 text-[#D6E1DD] sm:text-sm">
+          2026年9月1日以降の新規登録は月額1,000円となります。
+        </p>
+
         <a
           href="#checkout"
           className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-8 font-bold text-white"

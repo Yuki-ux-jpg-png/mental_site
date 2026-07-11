@@ -2,25 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+  --font-sans: sans-serif;
+  --font-serif: serif;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
+  min-width: 320px;
   margin: 0;
-  background: #fafaf7;
+  overflow-x: hidden;
+  background: #fbfaf7;
   color: #20372f;
   font-family: var(--font-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
 }
 
 .font-serif {
   font-family: var(--font-serif), serif;
 }
 
+.review-scroller {
+  scrollbar-width: none;
+}
+
+.review-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.embedded-checkout-shell,
+.embedded-checkout-shell > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+.embedded-checkout-shell iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 0;
+}
+
+.mobile-sticky-cta {
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+}
+
 ::selection {
   background: #d9e8f5;
+}
+
+@media (max-width: 639px) {
+  .checkout-card {
+    margin-right: -4px;
+    margin-left: -4px;
+    border-radius: 22px;
+  }
+
+  .embedded-checkout-shell {
+    min-height: 590px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

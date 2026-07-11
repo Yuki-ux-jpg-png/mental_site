@@ -17,6 +17,7 @@ export default function EmbeddedCheckoutSection() {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: "no-store",
     });
 
     const data = (await response.json()) as {
@@ -26,7 +27,8 @@ export default function EmbeddedCheckoutSection() {
 
     if (!response.ok || !data.clientSecret) {
       throw new Error(
-        data.error ?? "決済画面を読み込めませんでした。時間をおいて再度お試しください。",
+        data.error ??
+          "決済画面を読み込めませんでした。時間をおいて再度お試しください。",
       );
     }
 
@@ -42,10 +44,12 @@ export default function EmbeddedCheckoutSection() {
 
   if (!stripePromise) {
     return (
-      <div className="rounded-2xl bg-[#FFF4EE] p-6 text-sm leading-7 text-[#75432F]">
-        Stripeの公開可能キーが設定されていません。
-        Vercelの環境変数に
-        <code className="mx-1 rounded bg-white px-1 py-0.5">
+      <div
+        role="alert"
+        className="m-2 rounded-2xl bg-[#FFF1EA] p-5 text-sm leading-7 text-[#75432F] sm:m-0 sm:p-6"
+      >
+        Stripeの公開可能キーが設定されていません。Vercelの環境変数に
+        <code className="mx-1 break-all rounded bg-white px-1.5 py-1 text-xs">
           NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
         </code>
         を追加して、再デプロイしてください。
@@ -54,8 +58,10 @@ export default function EmbeddedCheckoutSection() {
   }
 
   return (
-    <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
-      <EmbeddedCheckout />
-    </EmbeddedCheckoutProvider>
+    <div className="embedded-checkout-shell min-h-[540px] w-full">
+      <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
+        <EmbeddedCheckout />
+      </EmbeddedCheckoutProvider>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ export default async function ReturnPage({
     return (
       <ReturnShell
         title="決済情報を確認できませんでした"
-        text="URLに決済情報が含まれていません。トップページからもう一度お試しください。"
+        text="トップページからもう一度お試しください。"
       />
     );
   }
@@ -55,29 +55,29 @@ export default async function ReturnPage({
     }
 
     return (
-      <main className="min-h-screen bg-[#FAFAF7] px-5 py-16 text-[#20372F] md:py-24">
-        <section className="mx-auto max-w-2xl rounded-[30px] border border-[#20372F]/10 bg-white p-8 text-center shadow-[0_24px_70px_rgba(32,55,47,0.10)] md:p-12">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#E8F0ED] text-3xl">
+      <main className="min-h-screen bg-[#FBFAF7] px-4 py-12 text-[#20372F] sm:px-6 sm:py-20">
+        <section className="mx-auto max-w-xl rounded-[28px] border border-[#20372F]/10 bg-white p-6 text-center shadow-[0_24px_70px_rgba(32,55,47,0.10)] sm:p-10">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E5EFEB] text-2xl font-bold text-[#4F7C7D]">
             ✓
           </div>
-          <p className="mt-6 text-sm font-bold tracking-[0.15em] text-[#5D8A8E]">
+          <p className="mt-5 text-xs font-bold tracking-[0.15em] text-[#4F7C7D]">
             PAYMENT COMPLETE
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold md:text-5xl">
+          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">
             ご参加ありがとうございます
           </h1>
-          <p className="mt-6 leading-8 text-[#64736C]">
+          <p className="mt-6 text-sm leading-8 text-[#62736C] sm:text-base">
             こころの居場所への参加手続きが完了しました。
             {customerEmail
               ? ` ${customerEmail} 宛に、参加方法をご案内します。`
               : " 登録メールアドレス宛に、参加方法をご案内します。"}
           </p>
-          <p className="mt-4 leading-8 text-[#64736C]">
+          <p className="mt-3 text-sm leading-8 text-[#62736C] sm:text-base">
             無理に投稿しなくても大丈夫です。まずは読むだけでも、安心してご利用ください。
           </p>
           <Link
             href="/"
-            className="mt-8 inline-flex rounded-full bg-[#20372F] px-7 py-4 font-bold text-white"
+            className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#20372F] px-7 text-sm font-bold text-white"
           >
             トップページへ戻る
           </Link>
@@ -108,13 +108,17 @@ function ReturnShell({
   buttonHref?: string;
 }) {
   return (
-    <main className="min-h-screen bg-[#FAFAF7] px-5 py-16 text-[#20372F] md:py-24">
-      <section className="mx-auto max-w-2xl rounded-[30px] border border-[#20372F]/10 bg-white p-8 text-center shadow-[0_24px_70px_rgba(32,55,47,0.10)] md:p-12">
-        <h1 className="font-serif text-3xl font-bold md:text-4xl">{title}</h1>
-        <p className="mt-5 leading-8 text-[#64736C]">{text}</p>
+    <main className="min-h-screen bg-[#FBFAF7] px-4 py-12 text-[#20372F] sm:px-6 sm:py-20">
+      <section className="mx-auto max-w-xl rounded-[28px] border border-[#20372F]/10 bg-white p-6 text-center shadow-[0_24px_70px_rgba(32,55,47,0.10)] sm:p-10">
+        <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
+          {title}
+        </h1>
+        <p className="mt-5 text-sm leading-8 text-[#62736C] sm:text-base">
+          {text}
+        </p>
         <Link
           href={buttonHref}
-          className="mt-8 inline-flex rounded-full bg-[#20372F] px-7 py-4 font-bold text-white"
+          className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#20372F] px-7 text-sm font-bold text-white"
         >
           {buttonLabel}
         </Link>

@@ -374,14 +374,8 @@ export default function HomePage() {
               </div>
             </aside>
 
-            <div>
-              <div className="mb-3 rounded-2xl border border-[#C97855]/20 bg-[#FFF8F4] px-4 py-3 text-center text-xs font-bold leading-5 text-[#A85434] sm:text-sm">
-                決済欄に「月額50円」と表示されることをご確認ください。
-              </div>
-
-              <div className="checkout-card overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5">
-                <EmbeddedCheckoutSection />
-              </div>
+            <div className="checkout-card overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5">
+              <EmbeddedCheckoutSection />
             </div>
           </div>
         </div>

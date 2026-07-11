@@ -102,6 +102,11 @@ const planItems = [
 
 const faqs = [
   {
+    question: "月額50円の特別価格はいつまでですか？",
+    answer:
+      "2026年8月31日23:59（日本時間）までに新規登録した方は月額50円です。2026年9月1日以降に新たに登録する方は月額1,000円となります。",
+  },
+  {
     question: "どんなサービスですか？",
     answer:
       "心や人間関係の悩み、発達障害の特性による生きづらさを抱える人たちが、安心できる距離感でつながれる相互支援コミュニティです。",
@@ -149,23 +154,24 @@ export default function HomePage() {
             href="#checkout"
             className="shrink-0 rounded-full bg-[#20372F] px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#2E4A40] sm:px-5 sm:text-sm"
           >
-            月50円で参加
+            8/31まで月50円
           </a>
         </div>
       </header>
 
       <section
         id="top"
-        className="relative scroll-mt-20 border-b border-[#20372F]/10 px-4 pb-12 pt-8 sm:px-6 sm:pb-18 sm:pt-12 lg:px-8 lg:py-20"
+        className="relative scroll-mt-20 border-b border-[#20372F]/10 px-4 pb-12 pt-8 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 lg:py-20"
       >
         <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#D9E8F5]/60 blur-3xl" />
         <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#E3EEE9] blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-9 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
           <div>
-            <p className="inline-flex rounded-full border border-[#4F7C7D]/20 bg-white/80 px-3.5 py-2 text-xs font-bold leading-5 text-[#4F7C7D] sm:text-sm">
-              ニックネームOK・読むだけOK・いつでも退会可能
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#C97855]/25 bg-[#FFF0E8] px-3.5 py-2 text-xs font-bold leading-5 text-[#A85434] sm:text-sm">
+              <Sparkles className="h-4 w-4 shrink-0" />
+              2026年8月31日までの早期登録特典
+            </div>
 
             <h1 className="mt-5 font-serif text-[clamp(2.7rem,13vw,4.9rem)] font-bold leading-[1.1] tracking-[-0.04em]">
               ひとりで
@@ -175,15 +181,32 @@ export default function HomePage() {
 
             <p className="mt-5 max-w-2xl text-[15px] leading-8 text-[#52645D] sm:text-lg sm:leading-9">
               心や人間関係の悩み、発達障害の特性による生きづらさを抱える人が、
-              安心できる距離感でつながる月50円の相互支援コミュニティです。
+              安心できる距離感でつながる相互支援コミュニティです。
             </p>
+
+            <div className="mt-5 rounded-[24px] border border-[#C97855]/20 bg-white/90 p-5 shadow-[0_14px_38px_rgba(201,120,85,0.10)] sm:max-w-xl sm:p-6">
+              <p className="text-xs font-bold tracking-[0.12em] text-[#A85434]">
+                8月31日23:59までに新規登録した方限定
+              </p>
+              <div className="mt-3 flex flex-wrap items-end gap-x-4 gap-y-1">
+                <span className="text-sm text-[#77837E] line-through">
+                  通常 月額1,000円
+                </span>
+                <span className="font-serif text-4xl font-bold text-[#C97855] sm:text-5xl">
+                  月額50円
+                </span>
+              </div>
+              <p className="mt-3 text-xs leading-6 text-[#62736C] sm:text-sm">
+                2026年9月1日以降の新規登録は月額1,000円となります。
+              </p>
+            </div>
 
             <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap">
               <a
                 href="#checkout"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-7 text-base font-bold text-white shadow-[0_16px_34px_rgba(201,120,85,0.24)] transition hover:-translate-y-0.5 hover:bg-[#B96C4B]"
               >
-                月50円で参加手続きへ
+                8/31まで月50円で参加
               </a>
               <a
                 href="#reviews"
@@ -241,8 +264,8 @@ export default function HomePage() {
               text: "読むだけの参加も歓迎しています。",
             },
             {
-              title: "月50円・いつでも退会",
-              text: "続けることを無理に求めません。",
+              title: "8/31まで月額50円",
+              text: "9/1以降の新規登録は月額1,000円です。",
             },
             {
               title: "Stripeで安全に決済",
@@ -271,16 +294,17 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-bold tracking-[0.18em] text-[#4F7C7D] sm:text-sm">
-              このページ内で安全に決済
+            <p className="text-xs font-bold tracking-[0.18em] text-[#A85434] sm:text-sm">
+              2026年8月31日23:59までの特別価格
             </p>
             <h2 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">
-              月50円で、
-              <br className="sm:hidden" />
-              心の居場所を。
+              通常月額1,000円が、
+              <br />
+              今なら月額50円。
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#62736C] sm:text-base sm:leading-8">
-              必要事項を入力すると、そのまま参加手続きを完了できます。
+              必要事項を入力すると、このページ内で参加手続きを完了できます。
+              9月1日以降の新規登録は月額1,000円です。
             </p>
           </div>
 
@@ -290,14 +314,23 @@ export default function HomePage() {
                 こころの居場所 メンバーシップ
               </p>
 
-              <div className="mt-4 flex items-end gap-2">
-                <span className="font-serif text-6xl font-bold leading-none">
-                  ¥50
-                </span>
-                <span className="pb-1 text-sm text-[#D9E5E0]">/ 月</span>
+              <div className="mt-5 rounded-2xl bg-white/10 p-4">
+                <p className="text-xs font-bold text-[#F1C8B5]">
+                  8月31日までの早期登録特典
+                </p>
+                <p className="mt-2 text-sm text-[#D9E5E0] line-through">
+                  通常 月額1,000円
+                </p>
+                <div className="mt-1 flex items-end gap-2">
+                  <span className="font-serif text-6xl font-bold leading-none">
+                    ¥50
+                  </span>
+                  <span className="pb-1 text-sm text-[#D9E5E0]">/ 月</span>
+                </div>
               </div>
-              <p className="mt-3 text-sm text-[#D9E5E0]">
-                1日あたり約2円。いつでも退会できます。
+
+              <p className="mt-4 text-sm leading-7 text-[#D9E5E0]">
+                2026年9月1日以降に新規登録する場合は、月額1,000円となります。
               </p>
 
               <ul className="mt-7 space-y-3">
@@ -320,8 +353,13 @@ export default function HomePage() {
               </div>
             </aside>
 
-            <div className="checkout-card overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5">
-              <EmbeddedCheckoutSection />
+            <div>
+              <div className="mb-3 rounded-2xl border border-[#C97855]/20 bg-[#FFF8F4] px-4 py-3 text-center text-xs font-bold leading-5 text-[#A85434] sm:text-sm">
+                決済欄に「月額50円」と表示されることをご確認ください。
+              </div>
+              <div className="checkout-card overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5">
+                <EmbeddedCheckoutSection />
+              </div>
             </div>
           </div>
         </div>
@@ -472,19 +510,22 @@ export default function HomePage() {
 
       <section className="bg-[#20372F] px-4 py-16 text-center text-white sm:px-6 sm:py-20 lg:px-8">
         <ShieldCheck className="mx-auto h-9 w-9 text-[#BCD3CA]" />
-        <h2 className="mt-5 font-serif text-3xl font-bold leading-tight sm:text-5xl">
-          無理に話さなくていい。
+        <p className="mt-5 text-xs font-bold tracking-[0.14em] text-[#F1C8B5]">
+          2026年8月31日までの特別価格
+        </p>
+        <h2 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">
+          通常月額1,000円が、
           <br />
-          まずは読むだけでも。
+          今なら月額50円。
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#D6E1DD] sm:text-base sm:leading-8">
-          心がつらいときに、ひとりで抱え込まないための選択肢を。
+          無理に話さなくて大丈夫です。まずは読むだけでも参加できます。
         </p>
         <a
           href="#checkout"
           className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-8 font-bold text-white"
         >
-          月50円で参加手続きへ
+          8/31まで月50円で参加
         </a>
       </section>
 
@@ -501,7 +542,7 @@ export default function HomePage() {
           href="#checkout"
           className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#C97855] px-5 text-sm font-bold text-white"
         >
-          月50円でこのページから参加
+          8/31まで月50円で参加
         </a>
       </div>
     </main>

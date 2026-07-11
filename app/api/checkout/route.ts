@@ -58,13 +58,6 @@ export async function POST(request: NextRequest) {
       phone_number_collection: {
         enabled: false,
       },
-      branding_settings: {
-        display_name: "こころの居場所",
-        background_color: "#FFFFFF",
-        button_color: "#C97855",
-        border_style: "rounded",
-        font_family: "zen_maru_gothic",
-      },
       custom_text: {
         submit: {
           message:

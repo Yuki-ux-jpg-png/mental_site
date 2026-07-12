@@ -133,8 +133,13 @@ const faqs = [
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#FBFAF7] pb-24 text-[#20372F] lg:pb-0">
-      <header className="sticky top-0 z-50 border-b border-[#20372F]/10 bg-[#FBFAF7]/95 backdrop-blur-md">
+    <main className="professional-page relative isolate min-h-screen overflow-x-hidden pb-24 text-[#20372F] lg:pb-0">
+      <div className="professional-background" aria-hidden="true">
+        <span className="ambient-orb ambient-orb-one" />
+        <span className="ambient-orb ambient-orb-two" />
+        <span className="ambient-orb ambient-orb-three" />
+      </div>
+      <header className="sticky top-0 z-50 border-b border-white/60 bg-[#F8FAF9]/78 shadow-[0_8px_30px_rgba(32,55,47,0.05)] backdrop-blur-xl">
         <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <a href="#top" className="flex min-w-0 items-center gap-2.5">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E5EFEB]">
@@ -161,13 +166,13 @@ export default function HomePage() {
 
       <section
         id="top"
-        className="relative scroll-mt-20 border-b border-[#20372F]/10 px-4 pb-7 pt-5 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8 lg:py-20"
+        className="hero-surface relative scroll-mt-20 border-b border-white/60 px-4 pb-7 pt-5 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8 lg:py-20"
       >
         <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#D9E8F5]/60 blur-3xl" />
         <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#E3EEE9] blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-6 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
-          <div>
+          <div className="hero-copy">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#C97855]/25 bg-[#FFF0E8] px-3.5 py-2 text-xs font-bold leading-5 text-[#A85434] sm:text-sm">
               <Sparkles className="h-4 w-4 shrink-0" />
               2026年8月31日までの早期登録特典
@@ -184,7 +189,7 @@ export default function HomePage() {
               相互支援コミュニティです。
             </p>
 
-            <div className="mt-4 rounded-[22px] border border-[#C97855]/20 bg-white/90 p-4 shadow-[0_14px_38px_rgba(201,120,85,0.10)] sm:mt-5 sm:max-w-xl sm:rounded-[24px] sm:p-6">
+            <div className="glass-panel mt-4 rounded-[22px] border border-white/80 bg-white/74 p-4 shadow-[0_18px_50px_rgba(50,70,63,0.10)] backdrop-blur-xl sm:mt-5 sm:max-w-xl sm:rounded-[24px] sm:p-6">
               <p className="text-xs font-bold tracking-[0.12em] text-[#A85434]">
                 8月31日23:59までに新規登録した方限定
               </p>
@@ -210,7 +215,7 @@ export default function HomePage() {
             <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">
               <a
                 href="#checkout"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-7 text-base font-bold text-white shadow-[0_16px_34px_rgba(201,120,85,0.24)] transition hover:-translate-y-0.5 hover:bg-[#B96C4B]"
+                className="premium-cta inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-7 text-base font-bold text-white shadow-[0_16px_34px_rgba(201,120,85,0.24)] transition hover:-translate-y-0.5 hover:bg-[#B96C4B]"
               >
                 月50円で参加
               </a>
@@ -236,7 +241,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative mx-auto hidden w-full max-w-xl md:block">
+          <div className="hero-visual relative mx-auto hidden w-full max-w-xl md:block">
             <div className="overflow-hidden rounded-[28px] border border-white bg-white p-2 shadow-[0_24px_70px_rgba(32,55,47,0.13)] sm:rounded-[36px] sm:p-3">
               <Image
                 src="/hero.png"
@@ -263,7 +268,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="hidden border-b border-[#20372F]/10 bg-white px-4 py-7 sm:block sm:px-6 sm:py-9 lg:px-8">
+      <section className="hidden border-b border-white/60 bg-white/62 px-4 py-7 backdrop-blur-lg sm:block sm:px-6 sm:py-9 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-3 sm:grid-cols-3">
           {[
             {
@@ -281,7 +286,7 @@ export default function HomePage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl bg-[#F3F7F5] px-4 py-4 text-center sm:px-5"
+              className="professional-card rounded-2xl border border-white/70 bg-white/66 px-4 py-4 text-center backdrop-blur-lg sm:px-5"
             >
               <p className="text-sm font-bold">{item.title}</p>
               <p className="mt-1 text-xs leading-5 text-[#62736C]">
@@ -298,7 +303,7 @@ export default function HomePage() {
 
       <section
         id="checkout"
-        className="scroll-mt-20 border-b border-[#20372F]/10 bg-[#F2EEE8] px-4 py-9 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+        className="checkout-surface scroll-mt-20 border-b border-white/60 px-4 py-9 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
@@ -324,7 +329,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-start lg:gap-8">
-            <aside className="order-2 rounded-[28px] bg-[#20372F] p-6 text-white shadow-[0_22px_60px_rgba(32,55,47,0.18)] sm:p-8 lg:order-1 lg:sticky lg:top-24">
+            <aside className="premium-dark-panel order-2 rounded-[28px] p-6 text-white shadow-[0_28px_80px_rgba(20,42,34,0.22)] sm:p-8 lg:order-1 lg:sticky lg:top-24">
               <p className="text-xs font-bold tracking-[0.13em] text-[#BED3CB]">
                 こころの居場所 メンバーシップ
               </p>
@@ -374,7 +379,7 @@ export default function HomePage() {
               </div>
             </aside>
 
-            <div className="checkout-card order-1 overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5 lg:order-2">
+            <div className="checkout-card professional-card order-1 overflow-hidden rounded-[28px] border border-white/80 bg-white/86 p-2 shadow-[0_26px_70px_rgba(32,55,47,0.11)] backdrop-blur-xl sm:p-5 lg:order-2">
               <EmbeddedCheckoutSection />
             </div>
           </div>
@@ -383,7 +388,7 @@ export default function HomePage() {
 
       <section
         id="reviews"
-        className="scroll-mt-20 border-b border-[#20372F]/10 bg-[#E9F1EE]/60 py-16 sm:py-20 lg:py-24"
+        className="reviews-surface scroll-mt-20 border-b border-white/60 py-16 sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-7xl">
           <div className="px-4 sm:px-6 lg:px-8">
@@ -406,7 +411,7 @@ export default function HomePage() {
             {testimonials.map((testimonial) => (
               <article
                 key={`${testimonial.profile}-${testimonial.title}`}
-                className="min-w-[86%] snap-center rounded-[24px] border border-[#20372F]/10 bg-white p-5 shadow-[0_16px_42px_rgba(32,55,47,0.07)] sm:min-w-[380px] sm:p-6 md:min-w-0"
+                className="professional-card min-w-[86%] snap-center rounded-[24px] border border-white/75 bg-white/74 p-5 shadow-[0_18px_48px_rgba(32,55,47,0.08)] backdrop-blur-lg sm:min-w-[380px] sm:p-6 md:min-w-0"
               >
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-xs font-bold text-[#63746C]">
@@ -475,7 +480,7 @@ export default function HomePage() {
             {features.map(({ icon: Icon, badge, title, text }) => (
               <article
                 key={title}
-                className="rounded-[24px] border border-[#20372F]/10 bg-white p-5 shadow-[0_14px_36px_rgba(32,55,47,0.05)] sm:p-7"
+                className="professional-card rounded-[24px] border border-white/75 bg-white/72 p-5 shadow-[0_18px_48px_rgba(32,55,47,0.07)] backdrop-blur-lg sm:p-7"
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#DDEBE7] text-[#426F70]">
@@ -508,7 +513,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="mt-8 divide-y divide-[#20372F]/10 overflow-hidden rounded-[24px] border border-[#20372F]/10 bg-white">
+          <div className="professional-card mt-8 divide-y divide-[#20372F]/10 overflow-hidden rounded-[24px] border border-white/75 bg-white/76 shadow-[0_18px_48px_rgba(32,55,47,0.07)] backdrop-blur-lg">
             {faqs.map(({ question, answer }) => (
               <details key={question} className="group p-5 sm:p-7">
                 <summary className="cursor-pointer list-none font-bold leading-7">
@@ -532,7 +537,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#20372F] px-4 py-16 text-center text-white sm:px-6 sm:py-20 lg:px-8">
+      <section className="premium-dark-panel px-4 py-16 text-center text-white sm:px-6 sm:py-20 lg:px-8">
         <ShieldCheck className="mx-auto h-9 w-9 text-[#BCD3CA]" />
 
         <p className="mt-5 text-xs font-bold tracking-[0.14em] text-[#F1C8B5]">
@@ -557,7 +562,7 @@ export default function HomePage() {
 
         <a
           href="#checkout"
-          className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-8 font-bold text-white"
+          className="premium-cta mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-8 font-bold text-white"
         >
           月50円で参加
         </a>
@@ -574,7 +579,7 @@ export default function HomePage() {
       <div className="mobile-sticky-cta fixed inset-x-0 bottom-0 z-50 border-t border-[#20372F]/10 bg-white/95 px-3 pt-2.5 shadow-[0_-12px_32px_rgba(32,55,47,0.12)] backdrop-blur lg:hidden">
         <a
           href="#checkout"
-          className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#C97855] px-5 text-sm font-bold text-white"
+          className="premium-cta flex min-h-12 w-full items-center justify-center rounded-full bg-[#C97855] px-5 text-sm font-bold text-white"
         >
           月50円で参加
         </a>

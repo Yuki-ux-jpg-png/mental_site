@@ -161,12 +161,12 @@ export default function HomePage() {
 
       <section
         id="top"
-        className="relative scroll-mt-20 border-b border-[#20372F]/10 px-4 pb-12 pt-8 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 lg:py-20"
+        className="relative scroll-mt-20 border-b border-[#20372F]/10 px-4 pb-7 pt-5 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8 lg:py-20"
       >
         <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#D9E8F5]/60 blur-3xl" />
         <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#E3EEE9] blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-9 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-6 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#C97855]/25 bg-[#FFF0E8] px-3.5 py-2 text-xs font-bold leading-5 text-[#A85434] sm:text-sm">
               <Sparkles className="h-4 w-4 shrink-0" />
@@ -180,11 +180,11 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-[15px] leading-8 text-[#52645D] sm:text-lg sm:leading-9">
-              心や人間関係の悩み、発達障害の特性による生きづらさを抱える人が、
-              安心できる距離感でつながる相互支援コミュニティです。
+              心や人間関係の悩みを、安心できる距離感で話せる
+              相互支援コミュニティです。
             </p>
 
-            <div className="mt-5 rounded-[24px] border border-[#C97855]/20 bg-white/90 p-5 shadow-[0_14px_38px_rgba(201,120,85,0.10)] sm:max-w-xl sm:p-6">
+            <div className="mt-4 rounded-[22px] border border-[#C97855]/20 bg-white/90 p-4 shadow-[0_14px_38px_rgba(201,120,85,0.10)] sm:mt-5 sm:max-w-xl sm:rounded-[24px] sm:p-6">
               <p className="text-xs font-bold tracking-[0.12em] text-[#A85434]">
                 8月31日23:59までに新規登録した方限定
               </p>
@@ -193,7 +193,7 @@ export default function HomePage() {
                 <span className="text-sm text-[#77837E] line-through">
                   通常 月額1,000円
                 </span>
-                <span className="font-serif text-4xl font-bold text-[#C97855] sm:text-5xl">
+                <span className="font-serif text-3xl font-bold text-[#C97855] sm:text-5xl">
                   月額50円
                 </span>
               </div>
@@ -207,7 +207,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap">
+            <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">
               <a
                 href="#checkout"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#C97855] px-7 text-base font-bold text-white shadow-[0_16px_34px_rgba(201,120,85,0.24)] transition hover:-translate-y-0.5 hover:bg-[#B96C4B]"
@@ -217,17 +217,17 @@ export default function HomePage() {
 
               <a
                 href="#reviews"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#20372F]/15 bg-white px-7 text-base font-bold text-[#20372F]"
+                className="hidden min-h-14 items-center justify-center rounded-full border border-[#20372F]/15 bg-white px-7 text-base font-bold text-[#20372F] sm:inline-flex"
               >
                 口コミを見る
               </a>
             </div>
 
-            <div className="mt-5 grid grid-cols-3 gap-2">
+            <div className="mt-4 grid grid-cols-3 gap-2 sm:mt-5">
               {["匿名で参加", "読むだけOK", "退会はいつでも"].map((item) => (
                 <div
                   key={item}
-                  className="flex min-h-16 flex-col items-center justify-center rounded-2xl border border-[#20372F]/10 bg-white/85 px-2 text-center text-[11px] font-bold leading-5 text-[#53665E] sm:text-sm"
+                  className="flex min-h-14 flex-col items-center justify-center rounded-2xl border border-[#20372F]/10 bg-white/85 px-2 text-center text-[10px] font-bold leading-4 text-[#53665E] sm:min-h-16 sm:text-sm sm:leading-5"
                 >
                   <Check className="mb-1 h-4 w-4 text-[#4F7C7D]" />
                   {item}
@@ -236,7 +236,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-xl">
+          <div className="relative mx-auto hidden w-full max-w-xl md:block">
             <div className="overflow-hidden rounded-[28px] border border-white bg-white p-2 shadow-[0_24px_70px_rgba(32,55,47,0.13)] sm:rounded-[36px] sm:p-3">
               <Image
                 src="/hero.png"
@@ -263,7 +263,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-[#20372F]/10 bg-white px-4 py-7 sm:px-6 sm:py-9 lg:px-8">
+      <section className="hidden border-b border-[#20372F]/10 bg-white px-4 py-7 sm:block sm:px-6 sm:py-9 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-3 sm:grid-cols-3">
           {[
             {
@@ -298,7 +298,7 @@ export default function HomePage() {
 
       <section
         id="checkout"
-        className="scroll-mt-20 border-b border-[#20372F]/10 bg-[#F2EEE8] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+        className="scroll-mt-20 border-b border-[#20372F]/10 bg-[#F2EEE8] px-4 py-9 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
@@ -324,7 +324,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-start lg:gap-8">
-            <aside className="rounded-[28px] bg-[#20372F] p-6 text-white shadow-[0_22px_60px_rgba(32,55,47,0.18)] sm:p-8 lg:sticky lg:top-24">
+            <aside className="order-2 rounded-[28px] bg-[#20372F] p-6 text-white shadow-[0_22px_60px_rgba(32,55,47,0.18)] sm:p-8 lg:order-1 lg:sticky lg:top-24">
               <p className="text-xs font-bold tracking-[0.13em] text-[#BED3CB]">
                 こころの居場所 メンバーシップ
               </p>
@@ -374,7 +374,7 @@ export default function HomePage() {
               </div>
             </aside>
 
-            <div className="checkout-card overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5">
+            <div className="checkout-card order-1 overflow-hidden rounded-[28px] border border-[#20372F]/10 bg-white p-2 shadow-[0_22px_60px_rgba(32,55,47,0.09)] sm:p-5 lg:order-2">
               <EmbeddedCheckoutSection />
             </div>
           </div>
